@@ -19,8 +19,9 @@
 				<div class="ui segment" style="width: 300px;">
 					<div class="ui divided selection list">
 						<div class="item" ng-repeat="team in availableTeams | filter:search" ng-click="selectTeam(team)" ng-class="{active:!selectingMode}">
-							<div class="content">
+							<div class="content" style="cursor: text;">
 								{{team.rank}} {{team.name}}
+								<i class="right icon" ng-show="selectingMode"></i>
 								<!-- <a class="ui label"ng-class="{purple : selectingMode}">{{team.name}}</a> -->
 							</div>
 						</div>
@@ -32,8 +33,8 @@
 		<div class="column">
 			<div>
 				<div class="putTeam" ng-repeat="button in buttons" style="left:{{button.left}};top:{{button.top}};" ng-click="adding = !adding;beginSelecting(button)">
-					<a class="ui green label" ng-show="!adding">Add Team</a>
-					<a class="ui purple label" ng-show="adding" style="margin-left:0 !important;">Selecting</a>
+					<a class="ui green label noHighlight" ng-show="!adding">Add Team</a>
+					<a class="ui purple label noHighlight" ng-show="adding" style="margin-left:0 !important;">Selecting</a>
 				</div>
 
 				<div class="putTeam" ng-repeat="team in selectedTeams" style="left:{{team.left}};top:{{team.top}};">
