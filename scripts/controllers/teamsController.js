@@ -41,6 +41,10 @@ APP.controller('teamsController', function ($scope) {
 		}
 	}
 
+	$scope.clear = function() {
+		$scope.search = '';
+	}
+
 
 
 	$scope.firstRoundGames = [
