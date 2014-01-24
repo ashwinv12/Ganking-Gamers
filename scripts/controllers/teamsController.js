@@ -9,24 +9,37 @@ APP.controller('teamsController', function ($scope) {
 	$scope.currentButton;
 
 	$scope.availableTeams = [
-		{name: 'Arizona', top: '', left: ''},
-		{name: 'Pittsburgh', top: '', left: ''},
-		{name: 'Creighton', top: '', left: ''},
-		{name: 'Syracuse', top: '', left: ''},
-		{name: 'Louisville', top: '', left: ''},
-		{name: 'Iowa', top: '', left: ''},
-		{name: 'George Mason', top: '', left: ''},
+		{name: 'Arizona', top: '', left: '', rank: 1},
+		{name: 'Pittsburgh', top: '', left: '', rank: 2},
+		{name: 'Creighton', top: '', left: '', rank: 3},
+		{name: 'Syracuse', top: '', left: '', rank: 4},
+		{name: 'Louisville', top: '', left: '', rank: 5},
+		{name: 'Iowa', top: '', left: '', rank: 6},
+		{name: 'Wichita St', top: '', left: '', rank: 7},
+		{name: 'Michigan St', top: '', left: '', rank: 8},
+		{name: 'Kansas', top: '', left: '', rank: 9},
+		{name: 'Michigan', top: '', left: '', rank: 10},
+		{name: 'Oklahoma St', top: '', left: '', rank: 11},
+		{name: 'Duke', top: '', left: '', rank: 12},
+		{name: 'Virginia', top: '', left: '', rank: 13},
+		{name: 'Villanova', top: '', left: '', rank: 14},
+		{name: 'Wisconson', top: '', left: '', rank: 15},
+		{name: 'Kentucky', top: '', left: '', rank: 16},
+		{name: 'Florida', top: '', left: '', rank: 17},
+		{name: 'Ohio St', top: '', left: '', rank: 18},
+		{name: 'San Diego St', top: '', left: '', rank: 19},
+		{name: 'Iowa St', top: '', left: '', rank: 20},
 	]
 
 	$scope.selectedTeams = [];
 
 	$scope.selectTeam = function(team) {
-		if ($scope.selectingMode === true) {
+		if ($scope.selectingMode) {
 			$scope.availableTeams.splice($scope.availableTeams.indexOf(team), 1);
 			team.top = $scope.currentTop;
 			team.left = $scope.currentLeft;
 			$scope.selectedTeams.push(team);
-			$scope.buttons.splice($scope.buttons.indexOf($scope.currentButton), 1)
+			$scope.buttons.splice($scope.buttons.indexOf($scope.currentButton), 1);
 			$scope.adding = false;
 			$scope.selectingMode = false;
 		}
@@ -38,7 +51,7 @@ APP.controller('teamsController', function ($scope) {
 		$scope.btnCurrentLeft = team.left;
 		var button = {left: $scope.btnCurrentLeft, top: $scope.btnCurrentTop};
 		$scope.buttons.push(button);
-		$scope.availableTeams.push(team);
+		$scope.availableTeams.splice(team.rank-1, 0, team);
 		// $scope.adding = false;
 		// $scope.selectingMode = false;
 	}
