@@ -7,10 +7,10 @@ APP.directive('menuBar', function () {
 			$scope.currentPageIndex = 0;
 
 			$scope.menuItems = [
-				{name: 'Home', icon: 'home'},
-				{name: 'Walkthroughs'},
-				{name: 'Gameplays'},
-				{name: 'About'},
+				{name: 'Home', icon: 'home', href: 'home'},
+				{name: 'Walkthroughs', icon: 'hdd', href: 'walkthroughs'},
+				{name: 'Gameplays', icon: 'gamepad', href: 'gameplays'},
+				{name: 'About', icon: 'info', href: 'about'},
 			]
 
 			$scope.setCurrentPage = function(index) {
