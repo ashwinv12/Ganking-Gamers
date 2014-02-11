@@ -1,10 +1,15 @@
 <div>
-	<div class="ui inverted menu">
-		<a href="" class="active item">
+	<div class="ui fluid four item inverted menu">
+		<div class="link item" ng-repeat="item in menuItems" ng-click="setCurrentPage($index)" ng-class="{active: currentPageIndex == $index}">
+			<i class="{{item.icon}} icon"></i>
+			{{item.name}}
+		</div>
+		<!-- <div class="active item" ng-click="setCurrentPage($index)" ng-class="{active: currentPage == $index}">
 			<i class="home icon"></i>
-		</a>
-		<div class="link item">Walkthroughs</div>
-		<div class="link item">Gameplays</div>
-		<div class="link item">About</div>
-	</div>
+			Home
+		</div>
+		<div class="link item" ng-click="setCurrentPage($index)" ng-class="{active: currentPage == $index}">Walkthroughs</div>
+		<div class="link item" ng-click="setCurrentPage($index)" ng-class="{active: currentPage == $index}">Gameplays</div>
+		<div class="link item" ng-click="setCurrentPage($index)" ng-class="{active: currentPage == $index}">About</div>
+	</div> -->
 </div>
