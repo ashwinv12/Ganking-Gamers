@@ -1,101 +1,21 @@
 <!doctype html>
-<html ng-app="MarchMadness">
+<html ng-app="APP">
 <head>
-	<title>Bracket Creator</title>
+	<title>Gaming Website</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/semantic/packaged/css/semantic.css">
 	<link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="teamsController">
+<body>
 	
-	<div class="ui two column grid">
-		<div class="column">
-			<div class="ui form segment" style="width:400px;">
-				<div class="ui right icon labeled input" style="width: 300px;">
-					<input type="text" ng-model="search" placeholder="Search for Team...">
-				  <i class="delete link icon" ng-click="clear()"></i>
-				</div>
-				
-				<div class="ui segment" style="width: 300px;">
-					<div class="ui divided selection list">
-						<div class="item" ng-repeat="team in availableTeams | filter:search" ng-click="selectTeam(team)" ng-class="{active:!selectingMode}">
-							<div class="content" style="cursor: text;">
-								{{team.rank}} {{team.name}}
-								<i class="right icon" ng-show="selectingMode"></i>
-								<!-- <a class="ui label"ng-class="{purple : selectingMode}">{{team.name}}</a> -->
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="column">
-			<div>
-				<div class="putTeam" ng-repeat="button in buttons" style="left:{{button.left}};top:{{button.top}};" ng-click="adding = !adding;beginSelecting(button)">
-					<a class="ui green label noHighlight" ng-show="!adding">Add Team</a>
-					<a class="ui purple label noHighlight" ng-show="adding" style="margin-left:0 !important;">Selecting</a>
-				</div>
-
-				<div class="putTeam" ng-repeat="team in selectedTeams" style="left:{{team.left}};top:{{team.top}};">
-					<a class="ui small black label">{{team.rank}} {{team.name}}
-						<i class="delete icon" ng-click="unselectTeam(team)"></i>
-					</a>
-				</div>
-				
-				<svg height="1000" width="1000" style="margin-top: -75px;margin-left:-150px;">
-					<g ng-repeat="game in firstRoundGames">
-						
-				  	<polyline points="{{game.x1}},{{game.y1}}  {{game.x2}},{{game.y1}}  {{game.x2}},{{game.y2}}  {{game.x1}},{{game.y2}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-
-				  	<polyline points="{{game.x3}},{{game.y3}}  {{game.x4}},{{game.y3}}  {{game.x4}},{{game.y4}}  {{game.x3}},{{game.y4}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-
-				  	<polyline points="{{game.x2}},{{(game.y1+game.y2)/2}}  {{game.x2 * 2}},{{(game.y1+game.y2)/2}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-
-				  	<polyline points="{{game.x4}},{{(game.y3+game.y4)/2}}  {{game.x4 * 2}},{{(game.y3+game.y4)/2}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-
-				  	<polyline points="{{game.x2 *2}},{{(game.y1+game.y2)/2}}  {{game.x2 * 2}},{{(game.y3+game.y4)/2}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-
-				  	<polyline points="{{game.x2 *2}},{{((game.y1+game.y2)/2 + (game.y3+game.y4)/2)/2}}  {{game.x2 * 3}},{{((game.y1+game.y2)/2 + (game.y3+game.y4)/2)/2}}"
-				  	style="fill:none;stroke:black;stroke-width:3"/>
-				  </g>
-					
-					<g ng-repeat="point in connectPoints">
-						<polyline points="480,{{point.pt1}}  480,{{point.pt2}}"
-						style="fill:none;stroke:black;stroke-width:3"/>
-						
-						<polyline points="480,{{(point.pt1 + point.pt2)/2}}  640,{{(point.pt1 + point.pt2)/2}}"
-						style="fill:none;stroke:black;stroke-width:3"/>
-					</g>
-					
-					<polyline points="640,300  640,700"
-					style="fill:none;stroke:black;stroke-width:3"/>
-
-					<polyline points="640,500  800,500"
-					style="fill:none;stroke:black;stroke-width:3"/>
-
-				</svg>
-			</div>
-		</div>
-	</div>
-	
-	
-	
-	
-	
-
-	
+	<menu-bar></menu-bar>
 
 	<script src="scripts/libraries/angular.min.js"></script>
 	<!-- // <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
 	<script src="css/semantic/packaged/javascript/semantic.min.js"></script>	
 	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/teamsController.js"></script>
+	<script src="scripts/directives/menuBar.js"></script>
+	<script src="scripts/directives/menuBar.js"></script>
 	
 </body>
 </html>
