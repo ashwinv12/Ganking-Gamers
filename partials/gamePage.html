@@ -1,0 +1,17 @@
+<div style="">
+	<div style="width: 675px;margin-left: 25%;margin-top:3%;">
+		<h2 class="ui top attached center aligned header">{{gameName}}</h2>
+		<div class="ui piled segment attached">
+			<div class="content">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, iure, nostrum, fuga, accusamus rem at impedit odio illo autem alias possimus natus unde blanditiis. Cum quo iste inventore quia repellendus!
+			</div>
+		</div>
+	</div>
+	<div style="background: url(../css/gamebackgrounds/{{background}});">
+	<div style="margin-top: 2%; margin-left: 8%;">
+		<div ng-repeat="video in videos" class="videoBox ui segment inverted">
+			<iframe width="500" height="281" ng-src="{{trustSrc(video.src)}}" frameborder="" allowfullscreen></iframe>
+		</div>
+	</div>
+	</div>
+</div>

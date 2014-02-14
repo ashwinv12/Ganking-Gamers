@@ -1,7 +1,6 @@
-<div>
-	<div class="ui fluid four item inverted menu">
-		<a href="#/{{item.href}}" class="link item" ng-repeat="item in menuItems" ng-click="setCurrentPage($index)" ng-class="{active: currentPageIndex == $index}">
-			<i class="{{item.icon}} icon"></i>
-			{{item.name}}
-		</a>
-</div>
+<div class="ui fluid four item inverted menu">
+	<a ng-repeat="item in menuItems" href="#/{{item.href}}" class="item" ng-click="setCurrentPage($index)" ng-class="{active: currentPageIndex == $index}">
+		<i class="{{item.icon}} icon"></i>
+		{{item.name}}
+	</a>
+</div>	

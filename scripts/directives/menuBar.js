@@ -3,13 +3,19 @@ APP.directive('menuBar', function () {
 		restrict: 'E',
 		templateUrl: 'menu.html',
 		replace: true,
-		controller: function($scope) {
-			$scope.currentPageIndex = 0;
-
+		controller: function($scope, $location) {
+			$scope.currentPageIndex = -1;
+			$scope.path = null;
+			$scope.setPath = function(path) {
+				$scope.currentPath = path;
+			}
+			$scope.getPath = function() {
+				return $scope.path;
+			}
 			$scope.menuItems = [
 				{name: 'Home', icon: 'home', href: 'home'},
-				{name: 'Walkthroughs', icon: 'hdd', href: 'walkthroughs'},
-				{name: 'Gameplays', icon: 'gamepad', href: 'gameplays'},
+				{name: "Let's Plays", icon: 'gamepad', href: 'walkthroughs'},
+				{name: "Quicklooks/Commentaries", icon: 'laptop', href: 'gameplays'},
 				{name: 'About', icon: 'info', href: 'about'},
 			]
 
