@@ -1,19 +1,24 @@
 <div style="width: 675px;margin-left: 25%;margin-top:3%;">
 	<h2 class="ui top attached center aligned header">Let's Plays</h2>
-	<div class="ui piled segment attached">
+	<div class="ui segment attached">
 		<div class="content">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, iure, nostrum, fuga, accusamus rem at impedit odio illo autem alias possimus natus unde blanditiis. Cum quo iste inventore quia repellendus!
+			Welcome to Perfectly Incompetent Walkthroughs! With the belief that gaming is only fun
+			when it really hurts, I, your humble host, Chaose, charge bravely forward head first into
+			games at their hardest. There will be strategy, there will be success, and there will be a lot of failure, but most importantly there will be one perfectly incomptent walkthrough. Now have fun and GG.
 		</div>
 	</div>
 </div>
 
-<div class="ui segment" style="width: 300px;margin-left:39%;">
-	<div class="ui fluid icon input">
-		<input type="text" placeholder="Search..." ng-model="search">	
-		<i class="close link icon" ng-show="search.length > 0" ng-click="search = ''"></i>
-	</div>
-	
-	<div class="ui fluid divided selection list">
-		<a href="#{{game.href}}" ng-repeat="game in games | filter:search" class="link item">{{game.name}}</a>
+<div style="width: 300px;margin-left:39%;margin-top:2%;">
+	<div class="ui attached segment">
+		<h4 class="ui dividing header">Current Games</h4>
+		<div class="ui fluid small icon input">
+			<input type="text" placeholder="Search..." ng-model="search">	
+			<i class="close link icon" ng-show="search.length > 0" ng-click="search = ''"></i>
+		</div>
+		
+		<div class="ui fluid divided selection list">
+			<a href="#{{game.href}}" ng-repeat="game in games | filter:search" class="link item"><b>{{game.name}}</b></a>
+		</div>
 	</div>
 </div>

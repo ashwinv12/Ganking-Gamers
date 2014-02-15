@@ -17,6 +17,7 @@ APP.directive('menuBar', function () {
 				{name: "Let's Plays", icon: 'gamepad', href: 'walkthroughs'},
 				{name: "Quicklooks/Commentaries", icon: 'laptop', href: 'gameplays'},
 				{name: 'About', icon: 'info', href: 'about'},
+				{name: 'Q & A', icon: 'question', href: 'qanda'},
 			]
 
 			$scope.setCurrentPage = function(index) {
