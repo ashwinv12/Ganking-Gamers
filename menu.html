@@ -1,6 +1,5 @@
 <div class="ui fluid five item inverted menu">
 	<a ng-repeat="item in menuItems" href="#/{{item.href}}" class="item" ng-click="setCurrentPage($index)" ng-class="{active: currentPageIndex == $index}">
-		<i class="{{item.icon}} icon"></i>
 		{{item.name}}
 	</a>
 </div>	
